@@ -5,27 +5,7 @@ This is a full-stack real-time peer-to-peer chat application built using *React*
 ---
 
 ## 📁 Project Structure
-chat-app/
-├── frontend/                # React frontend
-│   ├── public/              # Static assets (HTML, favicon, etc.)
-│   ├── src/                 # Source code
-│   │   ├── Components/      # Reusable UI components
-│   │   │   ├── ChatSidebar/     # Sidebar with users and search
-│   │   │   ├── ChatWindow/      # Chat window for messages
-│   │   │   └── ProfileOverlay/  # User profile UI
-│   │   ├── pages/           # Page-level components
-│   │   │   ├── SignupPage.js     # Signup route
-│   │   │   └── ChatPage.js       # Main chat interface
-│   │   ├── constants.js     # Dummy user and online user data
-│   │   ├── socket.js        # Socket.IO frontend setup
-│   │   ├── App.js           # Route management (Signup and Chat)
-│   │   └── index.js         # Entry point
-│   └── package.json         # Frontend dependencies
-│
-├── backend/                 # Express backend with Socket.IO
-│   ├── index.js             # Socket server logic
-│
-├── README.md                # You're here!
+<pre> <code>```text chat-app/ ├── frontend/ # React frontend │ ├── public/ # Static assets (HTML, favicon, etc.) │ ├── src/ # Source code │ │ ├── Components/ # Reusable UI components │ │ │ ├── ChatSidebar/ # Sidebar with users and search │ │ │ ├── ChatWindow/ # Chat window for messages │ │ │ └── ProfileOverlay/ # User profile UI │ │ ├── pages/ # Page-level components │ │ │ ├── SignupPage.js # Signup route │ │ │ └── ChatPage.js # Main chat interface │ │ ├── constants.js # Dummy user and online user data │ │ ├── socket.js # Socket.IO frontend setup │ │ ├── App.js # Route management (Signup and Chat) │ │ └── index.js # Entry point │ └── package.json # Frontend dependencies │ ├── backend/ # Express backend with Socket.IO │ ├── index.js # Socket server logic │ ├── README.md # You're here! ```</code> </pre>
 
 
 ---
