@@ -6,19 +6,26 @@ This is a full-stack real-time peer-to-peer chat application built using *React*
 
 ## 📁 Project Structure
 chat-app/
-├── frontend # React frontend
-│ ├── public/
-│ ├── src/
-│ │ ├── Components/
-│ │ │ ├── ChatSidebar/
-│ │ │ ├── ChatWindow/
-│ │ │ └── ProfileOverlay/
-│ │ ├── constants.js
-│ │ ├── socket.js
-│ │ └── App.js / ChatPage.js
-├── backend/ # Express backend with Socket.IO
-│ ├── index.js
-├── README.md
+├── frontend/                # React frontend
+│   ├── public/              # Static assets (HTML, favicon, etc.)
+│   ├── src/                 # Source code
+│   │   ├── Components/      # Reusable UI components
+│   │   │   ├── ChatSidebar/     # Sidebar with users and search
+│   │   │   ├── ChatWindow/      # Chat window for messages
+│   │   │   └── ProfileOverlay/  # User profile UI
+│   │   ├── pages/           # Page-level components
+│   │   │   ├── SignupPage.js     # Signup route
+│   │   │   └── ChatPage.js       # Main chat interface
+│   │   ├── constants.js     # Dummy user and online user data
+│   │   ├── socket.js        # Socket.IO frontend setup
+│   │   ├── App.js           # Route management (Signup and Chat)
+│   │   └── index.js         # Entry point
+│   └── package.json         # Frontend dependencies
+│
+├── backend/                 # Express backend with Socket.IO
+│   ├── index.js             # Socket server logic
+│
+├── README.md                # You're here!
 
 
 ---
@@ -66,14 +73,16 @@ chat-app/
 ```bash
 git clone https://github.com/your-username/chat-app.git
 cd chat-app
+```
 
 ---
 
 ### 2. Start the Backend
 
-cd server
+```cd server
 npm install
 node index.js
+```
 
 The backend runs on http://localhost:5000
 
@@ -81,8 +90,9 @@ The backend runs on http://localhost:5000
 
 ### 3. Start the Frontend in a new terminal
 
-cd client
+```cd client
 npm install
 npm start
+```
 
 The frontend runs on http://localhost:3000
