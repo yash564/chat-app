@@ -81,8 +81,9 @@ cd chat-app
 
 ### 2. Start the Backend
 
-```cd server
+```bash
 npm install
+cd backend
 node index.js
 ```
 
@@ -92,7 +93,8 @@ The backend runs on http://localhost:5000
 
 ### 3. Start the Frontend in a new terminal
 
-```cd client
+```bash
+cd frontend
 npm install
 npm start
 ```
