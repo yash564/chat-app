@@ -13,7 +13,7 @@ const SignUpPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // save user locally for now
+    // saved user locally for now
     localStorage.setItem("user", JSON.stringify(formData));
     navigate("/chat");
   };

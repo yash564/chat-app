@@ -15,18 +15,25 @@ const ChatPage = () => {
 
     const currentUser = JSON.parse(localStorage.getItem("user"));
 
+    // Toggle profile overlay visibility
     const toggleProfile = () => setProfileVisible(!profileVisible);
 
+
+    // Setup socket listeners on component mount
     useEffect(() => {
+        // Register current user with the server
         if (currentUser?.email) {
             socket.emit("register", currentUser.email);
         }
 
+        // Listen for updates on the list of online users
         socket.on("online-users", (users) => {
             setOnlineUsers(users);
         });
 
+        // Listen for incoming messages
         socket.on("receive-message", (msg) => {
+            // Update user list with the new message and unread count
             setUsers((prevUsers) => prevUsers.map((user) => {
                 if (user.email === msg.from) {
                     const isActive = selectedUser.email === msg.from;
@@ -37,16 +44,20 @@ const ChatPage = () => {
                 return user;
             }));
 
+            // If the message is from the currently selected user, update the chat window
             if (selectedUser?.email === msg.from) {
                 setSelectedUser((prev) => ({ ...prev, messages: [...prev.messages, msg] }));
             }
         });
 
+        // Clean up the socket connection on component unmount
         return () => {
             socket.disconnect();
         };
     }, []);
 
+
+    // Function to send a message to the selected user
     const sendMessage = () => {
         if (!newMessage.trim()) return;
 
@@ -57,18 +68,22 @@ const ChatPage = () => {
             timestamp: Date.now()
         }
 
+        // Emit message to server
         socket.emit("send-message", msg);
+
+        // Update local state with the sent message
         setUsers((prevUsers) => {
             const updatedUsers = prevUsers.map((user) =>
                 user.email === selectedUser.email ? { ...user, messages: [...user.messages, msg] } : user
             );
 
+            // Update selected user to reflect new message
             const updatedSelected = updatedUsers.find(u => u.email === selectedUser.email);
             setSelectedUser(updatedSelected);
 
             return updatedUsers;
         });
-        setNewMessage("");
+        setNewMessage("");  // Clear input box after sending
     };
 
     return (
