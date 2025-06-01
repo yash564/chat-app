@@ -19,7 +19,8 @@
 .search-bar {
     width: 354px;
     padding: 12px 20px 12px 40px;
-    border: 1px solid #d1d5db;
+    outline: none;
+    border: none;
     border-radius: 22px;
     background: url("../../search_logo.png");
     background-position: 10px 8px;
@@ -142,18 +143,22 @@
 }
 
 .chat-input {
-    background: white;
     display: flex;
     padding: 1rem;
-    border-top: 1px solid #e5e7eb;
 }
 
 .chat-input input {
     flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.25rem;
+    padding: 8px 16px 8px 16px;
+    border-radius: 12px;
     margin-right: 0.5rem;
+    border: none;
+    height: 26px;
+    outline: none;
+    background: url("../../send_icon.png");
+    background-color: #FFFFFF;
+    background-position: 99%;
+    background-repeat: no-repeat;
 }
 
 .chat-input button {
@@ -214,7 +219,7 @@
 }
 
 .avatar-wrapper{
-    display: block;
+    display: flex;
 }
 
 .right-section{

@@ -4,7 +4,12 @@ export const DUMMY_USERS = [
         phone: "+032165487924",
         email: "dianamoore@gmail.com",
         avatar: "https://i.pravatar.cc/150?img=47",
-        messages: [],
+        messages: [{
+            from: "yashk2700@gmail.com",
+            to: "dianamoore@gmail.com",
+            message: "Heyyyyaaaa!!",
+            timestamp: 1748767100000
+        }],
         unreadCount: 0
     },
     {

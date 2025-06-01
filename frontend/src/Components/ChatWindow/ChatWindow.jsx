@@ -27,7 +27,6 @@ const ChatWindow = ({ selectedUser, currentUser, onlineUsers, toggleProfile, sen
           onChange={(e) => setNewMessage(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
         />
-        <button onClick={sendMessage}>➤</button>
       </div>
     </div>
   )
